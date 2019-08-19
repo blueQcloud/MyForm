@@ -34,6 +34,6 @@ app.post('/submit', function(req, res){
     })
     connection.end();
 })
-app.listen(port, ()=> console.log('listening'))
+app.listen(3000, ()=> console.log('listening'))
 
 
