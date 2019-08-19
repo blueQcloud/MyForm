@@ -12,20 +12,6 @@ app.get('/', function(req, res){
     res.sendFile('index.html', {root:__form})
 });
 
-
-app.listen(port, ()=> console.log('example'))
-
-app.post('/submit', function(req, res){
-    console.log(req.body);
-    var sql = "insert into users values(null, '"+ req.body.name +"', '"+req.body.dob +"', '"+req.body.email+")"
-    connection.query(sql, function(err, rows, fields){
-        if(err) throw err;
-        res.render('index', {title:'Data Saved',
-    message:'Data Submitted'})
-    })
-})
-
-var mysql = require('mysql')
 var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -38,4 +24,16 @@ connection.connect(function(err){
     console.log('Connected..');
 })
 
-app.listen(1337)
+app.post('/submit', function(req, res){
+    console.log(req.body);
+    var sql = "insert into users values(null, '"+ req.body.name +"', '"+req.body.dob +"', '"+req.body.email+")"
+    connection.query(sql, function(err, rows, fields){
+        if(err) throw err
+        res.render('index', {title:'Data Saved',
+        message:'Data successfully saved'})
+    })
+    connection.end();
+})
+app.listen(port, ()=> console.log('listening'))
+
+
