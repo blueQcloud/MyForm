@@ -14,7 +14,7 @@
       User Sign Up
     </h1>
 </div>
-<form class = "myForm">
+<form class = "myForm" method="post" action="/submit">
     <div class = "form-group">
       <label for="Name"></label>
       <p class = "orderfont">Name</p>
@@ -30,7 +30,9 @@
       <p class = "orderfont">Email</p>
       <input id="Address" type='text' placeholder="Enter your email" class="form-control">
     </div>
-    <div><button (click)=submitInfor() class="btn btn-primary">Sign Up</button></div>
+    <div class = "form-group">
+        <label for ="submit"></label>
+        <button id="submit" class="btn btn-primary">Sign Up</button></div>
 </form>
 
 
