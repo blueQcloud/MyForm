@@ -1,3 +1,3 @@
 # MyForm
-To initialize, use npm cmd node(project directory), then npm start or nodemon.
+To initialize, use npm cmd node(project directory/submit.js), then npm start or nodemon.
 
